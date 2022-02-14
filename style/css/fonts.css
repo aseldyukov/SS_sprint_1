@@ -1,0 +1,19 @@
+/* @font-face { 
+    font-family: "Roboto";
+    src: url(WebFont.eot?) format("eot"),
+         url(WebFont.woff) format("woff"),
+         url(WebFont.ttf) format("truetype");
+} */
+
+
+/* Обычный */
+@font-face {
+	font-family: 'Roboto'; 
+	src: url(../fonts/Roboto-Regular.ttf); 
+}
+ 
+/* Жирный */
+@font-face {
+	font-family: 'Roboto-bold'; 
+	src: url(../fonts/Roboto-Bold.ttf); 
+}
