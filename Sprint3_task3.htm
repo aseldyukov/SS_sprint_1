@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myDiv {
+        height: auto;
+        min-height: 200px;
+        width: 200px;
+        display: block;
+        border: solid 1px black;
+        padding: 10px;
+    }
+
+    button {
+        height: auto;
+        width: 100px;
+        display: block;
+    }
+
+    p {
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div id="myDiv">
+        <button>button</button>
+    </div>
+</body>
+
+<script>    
+
+EventList = {
+        'click': ['I was pressed!', 'blue'],
+        'mouseover': ['Mouse on me!', 'red'],        
+        'mouseleave': ['Mouse is not on me!', 'green'],        
+    }
+
+    const button = document.getElementsByTagName('button')[0];
+    button.addEventListener('click', runEvent);
+    button.addEventListener('mouseover', runEvent);    
+    button.addEventListener('mouseleave', runEvent);
+    
+    // mousedown
+    // mouseup
+    // mouseenter
+    // mouseleave
+    // mouseover
+    // mouseout
+    
+    function runEvent(e) {
+        // Створення нового елемента
+        const newElement = document.createElement('p');
+        newElement.innerHTML = EventList[e.type][0];
+        newElement.style.color = EventList[e.type][1];
+        button.after(newElement);
+    }     
+</script>
+
+</html>

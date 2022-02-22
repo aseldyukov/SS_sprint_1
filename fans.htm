@@ -38,34 +38,136 @@
             <div class="logo"></div>
         </nav>
 
-        <header>                   
-            <p id='head1' class='header'>Just</p>
-            <p id='head2' class='header'>do</p>
-            <p id='head3' class='header'>it</p>                        
-              <div class='light x1'></div>
-              <div class='light x2'></div>
-              <div class='light x3'></div>
-              <div class='light x4'></div>
-              <div class='light x5'></div>
-              <div class='light x6'></div>
-              <div class='light x7'></div>
-              <div class='light x8'></div>
-              <div class='light x9'></div>
+        <header>
+            <div class='light x1'></div>
+            <div class='light x2'></div>
+            <div class='light x3'></div>
+            <div class='light x4'></div>
+            <div class='light x5'></div>
+            <div class='light x6'></div>
+            <div class='light x7'></div>
+            <div class='light x8'></div>
+            <div class='light x9'></div>
         </header>
 
-
-        <!-- Секция с контентом -->
-        <section>
+        <div class="track">
+            <div class='header' id='head1'>Just</div>
+            <div class='header' id='head2'>do</div>
+            <div class='header' id='head3'>it</div>
             <div class="runner runner-1"></div>
             <div class="runner runner-2"></div>
             <div class="runner runner-3"></div>
+        </div>
+        <h2>Звернення фанів</h2>
+
+        <!-- Секция с контентом -->
+        <section>
+            <div id="artical-list">
+                <artical>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam eum id repellat culpa molestias
+                        facere aspernatur. Porro fuga tempore consequatur voluptatum expedita qui repudiandae hic magni
+                        a rem, est nisi sapiente itaque, ea amet cumque sed vitae corrupti quibusdam?</p>
+                    <div class="artical-footer">
+                        <time datetime="2022-02-14 20:00">14.02.2022 20:00</time>
+                        <p class="name">Fun 1</p>
+                    </div>
+                </artical>
+            </div>
         </section>
 
+        <div class='form'>
+            <textarea name="text" id="text" placeholder="Написати звернення"></textarea>
+            <div class='button'><p>SEND</p></div>
+        </div>
+  
+        <!-- Секция с подвалом -->
+        <footer>
+            <div id="footer">
 
+                <!-- Лента Твиттера -->
+                <div id="twitter">
+                    <h3>TWITTER FEED</h3>
+                    <time datetime="2022-02-13"><a href="#">13 feb</a></time>
+                    <p> In ultricies pellentesque massa a porta. Aliquam ipsum enim, hendrerit ut porta nec, ullamcorper
+                        et nulla.
+                    </p>
+                </div>
 
+                <!-- Карта сайта -->
+                <div id="sitemap">
+                    <h3>SITEMAP</h3>
+                    <div>
+                        <a href="./index.htm">MAIN</a>
+                        <a href="#">MATCHES</a>
+                        <a href="#">NEWS</a>
+                    </div>
+                    <div>
+                        <a href="./fans.htm">FANS</a>
+                        <a href="#">CONTACTS</a>
+                        <a href="#">ADMIN</a>
+                    </div>
+                </div>
 
-     
+                <!-- Социальные ссылки -->
+                <div id="social">
+                    <h3>SOCIAL NETWORKS</h3>
+                    <a href="http://twitter.com/" class="social-icon twitter"></a>
+                    <a href="http://facebook.com/" class="social-icon facebook"></a>
+                    <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+                    <a href="http://vimeo.com/" class="social-icon-small vimeo"></a>
+                    <a href="http://youtube.com/" class="social-icon-small youtube"></a>
+                    <a href="http://flickr.com/" class="social-icon-small flickr"></a>
+                    <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+                    <a href="/rss/" class="social-icon-small rss"></a>
+                </div>
+
+                <!-- Копирайт -->
+                <div id="footer-logo">
+                    <div class="logo"></div>
+                    <p>Copyright © 2022 <a href="http://mysite.com">MySite</a> creation</p>
+                </div>
+            </div>
+        </footer>
     </div> <!-- id="wrapper" -->
+
+    <script>
+        const button = document.getElementsByClassName('button')[0]
+        button.addEventListener('click', buttonClick)
+
+        function buttonClick(e) {
+            const artical = document.getElementsByTagName('artical')[0]
+            let text = document.getElementById('text')
+            let textValue = text.value
+            let currentFunName = 'Fun1';
+            let dataTime = formatDate(new Date());
+
+            if (textValue.length > 0) {
+                const newElement = document.createElement('artical');
+                newElement.innerHTML = `<p> ${textValue} </p>
+                        <div class="artical-footer">
+                        <time datetime="${dataTime}">${dataTime}</time>
+                        <p class="name">${currentFunName}</p></div>`
+                artical.before(newElement);
+                text.value = "";
+            }
+        }
+
+        function formatDate(date) {
+            let YY = date.getFullYear(); // год
+            let MM = date.getMonth() + 1; // місяць
+            MM = MM < 10 ? "0" + MM : MM;
+            let DD = date.getDate(); // день
+            DD = DD < 10 ? "0" + DD : DD;
+            let hh = date.getHours(); // година
+            hh = hh < 10 ? "0" + hh : hh;
+            let mm = date.getMinutes(); // хвилина
+            mm = mm < 10 ? "0" + mm : mm;
+            let ss = date.getSeconds(); // секунда
+            ss = ss < 10 ? "0" + ss : ss;
+            return DD + "." + MM + "." + YY + " " + hh + ':' + mm + ':' + ss;
+        }
+    </script>
+
 
 </body>
 

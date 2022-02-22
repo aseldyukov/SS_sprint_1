@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>User1</li>
+        <li>User2</li>
+        <li>User3</li>
+        <li>User4</li>
+        <li>User5</li>
+    </ul>
+</body>
+<script>
+
+    console.log('=== 1st way to show the list elements ===');    
+    const list = document.getElementById('list');
+        
+    console.log(list.firstElementChild.textContent);
+    console.log(list.lastElementChild.textContent);
+    console.log(list.children[1].textContent);
+    console.log(list.children[3].textContent);
+    console.log(list.children[2].textContent);
+    
+
+    console.log('=== 2nd way to show the list elements ===');        
+    // const list2 = document.getElementsByTagName('li');
+    const list2 = document.querySelectorAll('li');        
+
+    console.log(list2[0].textContent);
+    console.log(list2[4].innerText);
+    console.log(list2[1].innerText);
+    console.log(list2[3].innerText);
+    console.log(list2[2].innerText);
+    
+</script>
+
+</html>
