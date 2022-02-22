@@ -130,8 +130,8 @@ button:focus {
 
 @-o-keyframes floatUp {
   0% {
-    top: 100vh;
     opacity: 0;
+    top: 100vh;
   }
 
   25% {
@@ -139,8 +139,8 @@ button:focus {
   }
 
   50% {
-    top: 0vh;
     opacity: .8;
+    top: 0vh;
   }
 
   75% {
@@ -148,8 +148,8 @@ button:focus {
   }
 
   100% {
-    top: -100vh;
     opacity: 0;
+    top: -100vh;
   }
 }
 
@@ -179,85 +179,83 @@ button:focus {
 }
 
 .header {
-  position: absolute;
-  top: 40%;
+  position: absolute;    
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   color: white;
-  font-size: 2em;
+  font-size: 1em;
+  visibility: hidden;
+  z-index: 10;
+  text-align:right;
 }
 
-
-
-
-#head1 {  
+#head1 {    
   animation-delay: 0s;
   animation-duration: 5s;
   animation-name: scale-text;
-  animation-iteration-count:infinite;
-  animation-direction:normal;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
-#head2 {  
+#head2 {
   animation-delay: 1s;
   animation-duration: 5s;
   animation-name: scale-text;
-  animation-iteration-count:infinite;
-  animation-direction:normal;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
-#head3 {  
+#head3 {
   animation-delay: 2s;
   animation-duration: 5s;
   animation-name: scale-text;
-  animation-iteration-count:infinite;
-  animation-direction:normal;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 
 @keyframes scale-text {
-  0% {    
-    transform: scale(1);    
+  0% {
+    transform: scale(0);
     visibility: hidden;
   }
 
-  10% {     
-    transform: scale(10);    
-    visibility: visible;    
+  10% {
+    transform: scale(4);
+    visibility: visible;
   }
-  
-  11% {     
+
+  11% {
     display: none;
     visibility: hidden;
   }
-  100% {     
+
+  100% {
     display: none;
     visibility: hidden;
   }
 }
 
 
-#footer {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
-  color: white;
-  position: fixed;
-  transform: translate(95vw, 90vh);
-}
+.track {
+  /* width: 960px; */
+  height: 50px;
+  position: relative;
+  display: block;
 
+}
 
 .runner {
   width: 50px;
-  height: 50px;
-  /* background-color: red; */
-  position: relative;
- 
-	background: url(../logo.png) no-repeat;
-	background-size: 50px 50px;
-	overflow: visible;	
-	display: block;
+  height: 50px;  
+  position: absolute;
+
+  background: url(../logo.png) no-repeat;
+  background-size: 50px 50px;
+  overflow: visible;
+  display: block;
   border-radius: 0;
 }
 
@@ -265,19 +263,19 @@ button:focus {
 .runner-1 {
   animation-name: runner-go;
   animation-duration: 20s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
 }
 
 .runner-2 {
   animation-name: runner-go;
   animation-duration: 23s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
 }
 
 .runner-3 {
   animation-name: runner-go;
   animation-duration: 18s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
 }
 
 
@@ -289,29 +287,28 @@ button:focus {
     transform: rotateY(0deg);
   }
 
-  49% {    
-    left: 910px;
-    /* top: 0px;     */
+  49% {
+    left: 92%;    
     transform: rotateY(0deg);
   }
 
-  50% {    
-    left: 910px;    
+  50% {
+    left: 92%;    
     transform: rotateY(180deg);
   }
 
-  52% {    
-    left: 910px;    
+  52% {
+    left: 92%;    
     transform: rotateY(180deg);
   }
 
-  99% {    
-    left: 0px;    
+  99% {
+    left: 0px;
     transform: rotateY(180deg);
   }
 
-  100% { 
-    left: 0px; 
+  100% {
+    left: 0px;
     transform: rotateY(0deg);
   }
 }
