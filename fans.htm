@@ -137,11 +137,14 @@
         function buttonClick(e) {
             const artical = document.getElementsByTagName('artical')[0]
             let text = document.getElementById('text')
-            let textValue = text.value
+            let textValue = text.value;
             let currentFunName = 'Fun1';
             let dataTime = formatDate(new Date());
-
-            if (textValue.length > 0) {
+            
+            if ( textValue.trim() == '' ) {
+                text.value = "";
+                alert('Введіть текст!');
+            } else {
                 const newElement = document.createElement('artical');
                 newElement.innerHTML = `<p> ${textValue} </p>
                         <div class="artical-footer">
